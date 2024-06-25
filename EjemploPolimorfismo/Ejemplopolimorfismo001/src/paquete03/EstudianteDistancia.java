@@ -20,8 +20,12 @@ public class EstudianteDistancia extends Estudiante {
     public void establecerCostoAsignatura(double valor){
         costoAsignatura = valor;
     }
+    @Override
+    public void calcularMatricula(){
+     matricula=numeroAsignaturas*costoAsignatura;   
+    }
 
-    
+   
 
     //  Métodos obtener para los datos o atributos de la clase
     // 5. Método obtenerNumeroAsignaturas() : Entero

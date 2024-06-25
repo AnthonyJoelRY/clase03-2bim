@@ -42,5 +42,6 @@ public class EstudiantePresencial extends Estudiante{
     public double obtenerCostoCredito(){
         return costoCredito;
     }
+
     
 }

@@ -13,11 +13,11 @@ public abstract class Docente {
         nombre = n;
     }
     
-    public void establecerDocente(String n){
+    public void establecerNombre(String n){
         nombre = n;
     }
     
-    public String obtenerDocente(){
+    public String obtenerNombre(){
         return nombre;
     }
     
@@ -25,7 +25,7 @@ public abstract class Docente {
         sueldo = d;
     }*/
     
-    public abstract void obtenerSueldo();
+    public abstract void obtenerSueldo();//metodo abstracto no puede tener cuerpo
     
     
 }
