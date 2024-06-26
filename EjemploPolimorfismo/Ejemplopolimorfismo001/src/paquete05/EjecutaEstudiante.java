@@ -29,10 +29,11 @@ public class EjecutaEstudiante {
         int tipoEstudiante;
         int contador;
         ArrayList<Estudiante> estudiantes = new ArrayList<>();
-
+        System.out.println("Ingrese cuantos estudiantes deseea registrar:");
+        int x = entrada.nextInt();
         // inicio de solución
         contador = 0;
-        while (contador < 4) {
+        while (contador < x) {
             // Se imprime mensaje en pantalla para solicitar
             // el tipo de estudiante que se desea ingresar
             System.out.println("Tipo de Estudiante a ingresar\n"
