@@ -1,10 +1,10 @@
-
 package paquete06;
 
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 import paquete04.Estudiante;
+import paquete04.EstudiantePresencial;
+import paquete04.EstudianteDistancia;
 
 public class EjecutaEstudiante {
 
@@ -12,11 +12,10 @@ public class EjecutaEstudiante {
 
         /*
         Generar un proceso que permita ingresar n número 
-        de . 
-        El usuario decide de manera prevía cuantos objetos
+        de estudiantes. 
+        El usuario decide de manera previa cuantos objetos
         de tipo EstudiantePresencial y EstudianteDistancia
         quiere ingresar.
-        
         */
         Scanner entrada = new Scanner(System.in).useLocale(Locale.US);
         String nombresEst;
@@ -29,9 +28,13 @@ public class EjecutaEstudiante {
         int numeroAsigs;
         int tipoEstudiante;
         int contador;
-        ArrayList<Estudiante> estudiantes = new ArrayList<>();
-        System.out.println("Ingrese cuantos estudiantes deseea registrar:");
+        
+        System.out.println("Ingrese cuantos estudiantes desea registrar:");
         int x = entrada.nextInt();
+        
+        // Crear un arreglo de tipo Estudiante con tamaño x
+        Estudiante[] estudiantes = new Estudiante[x];
+        
         // inicio de solución
         contador = 0;
         while (contador < x) {
@@ -58,9 +61,8 @@ public class EjecutaEstudiante {
             edadEst = entrada.nextInt();
 
             if (tipoEstudiante == 1) {
-
                 // Declarar, crear e iniciar objeto tipo EstudiantePresencial
-                paquete04.EstudiantePresencial estudianteP = new paquete04.EstudiantePresencial();
+                EstudiantePresencial estudianteP = new EstudiantePresencial();
                 // Solicitar ingreso de valores para variables 
                 // Solicitar numeroCreds, costoCred
                 // Leer numeroCreds, costoCred
@@ -78,7 +80,7 @@ public class EjecutaEstudiante {
                 estudianteP.establecerCostoCredito(costoCred);
                 // Se agrega al arreglo estudiantes un objeto de tipo
                 // EstudiantePresencial
-                estudiantes.add(estudianteP);
+                estudiantes[contador] = estudianteP;
 
             } else {
                 // Si el usuario ingresa un número diferente del valor 1 para 
@@ -86,7 +88,7 @@ public class EjecutaEstudiante {
                 // crear un objeto de tipo EstudianteDistancia
 
                 // Declarar, crear e iniciar objeto tipo EstudianteDistancia
-                paquete04.EstudianteDistancia estudianteD = new paquete04.EstudianteDistancia();
+                EstudianteDistancia estudianteD = new EstudianteDistancia();
                 // Solicitar ingreso de valores para variables 
                 // Solicitar numeroAsigs, costoAsig 
                 // Leer numeroAsigs, costoAsig
@@ -106,7 +108,7 @@ public class EjecutaEstudiante {
 
                 // Se agrega al arreglo estudiantes un objeto de tipo
                 // EstudianteDistancia
-                estudiantes.add(estudianteD);
+                estudiantes[contador] = estudianteD;
             }
 
             contador = contador + 1;
@@ -114,15 +116,14 @@ public class EjecutaEstudiante {
 
         // ciclo que permite comprobar el polimorfismo
         // este código no debe ser modificado.
-        for (int i = 0; i < estudiantes.size(); i++) {
+        for (int i = 0; i < estudiantes.length; i++) {
             // 1.  
-            estudiantes.get(i).calcularMatricula();
+            estudiantes[i].calcularMatricula();
             
             System.out.printf("Datos Estudiante\n"
                         + "%s\n",                        
-                  estudiantes.get(i));
+                  estudiantes[i]);
             
         }
     }
-
 }
