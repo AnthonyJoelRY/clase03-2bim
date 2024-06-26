@@ -9,7 +9,7 @@ package paquete07;
  *
  * @author reroes
  */
-public class Triangulo {
+public class Triangulo extends Figura {
 
     private double base;
     private double altura;
@@ -17,17 +17,30 @@ public class Triangulo {
     public Triangulo(double base, double altura) {
         this.base = base;
         this.altura = altura;
-    }
-    public void obtenerTriagulo() {
-     this.Triangulo=tr
+         caracteristicas = "Triangulo";
     }
 
-    public double calcular_area() {
-        return (base * altura) / 2;
+   
+    public void calcular_area() {
+        area =(base * altura) / 2;
     }
 
-    public void establecerTriagulo() {
-
+    public double getBase() {
+        return base;
     }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    
 
 }

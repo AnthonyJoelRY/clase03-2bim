@@ -17,4 +17,10 @@ abstract class Figura {
     public void setCaracteristicas(String caracteristicas) {
         this.caracteristicas = caracteristicas;
     }
+
+    @Override
+    public String toString() {
+        return "Figura{" + "caracteristicas=" + caracteristicas + ", area=" + area + '}';
+    }
+    
 }
