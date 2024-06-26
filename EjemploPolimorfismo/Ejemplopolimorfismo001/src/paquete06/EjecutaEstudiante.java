@@ -2,21 +2,11 @@ package paquete06;
 
 import java.util.Locale;
 import java.util.Scanner;
-import paquete04.Estudiante;
-import paquete04.EstudiantePresencial;
-import paquete04.EstudianteDistancia;
 
 public class EjecutaEstudiante {
 
     public static void main(String[] args) {
 
-        /*
-        Generar un proceso que permita ingresar n número 
-        de estudiantes. 
-        El usuario decide de manera previa cuantos objetos
-        de tipo EstudiantePresencial y EstudianteDistancia
-        quiere ingresar.
-        */
         Scanner entrada = new Scanner(System.in).useLocale(Locale.US);
         String nombresEst;
         String apellidosEst;
@@ -28,13 +18,13 @@ public class EjecutaEstudiante {
         int numeroAsigs;
         int tipoEstudiante;
         int contador;
-        
+
         System.out.println("Ingrese cuantos estudiantes desea registrar:");
         int x = entrada.nextInt();
-        
+
         // Crear un arreglo de tipo Estudiante con tamaño x
         Estudiante[] estudiantes = new Estudiante[x];
-        
+
         // inicio de solución
         contador = 0;
         while (contador < x) {
@@ -62,7 +52,7 @@ public class EjecutaEstudiante {
 
             if (tipoEstudiante == 1) {
                 // Declarar, crear e iniciar objeto tipo EstudiantePresencial
-                EstudiantePresencial estudianteP = new EstudiantePresencial();
+
                 // Solicitar ingreso de valores para variables 
                 // Solicitar numeroCreds, costoCred
                 // Leer numeroCreds, costoCred
@@ -72,6 +62,7 @@ public class EjecutaEstudiante {
                 costoCred = entrada.nextDouble();
                 // se hace uso de los métodos establecer para asignar valores
                 // a los datos (atributos) del objeto
+                EstudiantePresencial estudianteP = new EstudiantePresencial();
                 estudianteP.establecerNombresEstudiante(nombresEst);
                 estudianteP.establecerApellidoEstudiante(apellidosEst);
                 estudianteP.establecerIdentificacionEstudiante(identificacionEst);
@@ -88,7 +79,6 @@ public class EjecutaEstudiante {
                 // crear un objeto de tipo EstudianteDistancia
 
                 // Declarar, crear e iniciar objeto tipo EstudianteDistancia
-                EstudianteDistancia estudianteD = new EstudianteDistancia();
                 // Solicitar ingreso de valores para variables 
                 // Solicitar numeroAsigs, costoAsig 
                 // Leer numeroAsigs, costoAsig
@@ -99,6 +89,7 @@ public class EjecutaEstudiante {
 
                 // se hace uso de los métodos establecer para asignar valores
                 // a los datos (atributos) del objeto
+                EstudianteDistancia estudianteD = new EstudianteDistancia();
                 estudianteD.establecerNombresEstudiante(nombresEst);
                 estudianteD.establecerApellidoEstudiante(apellidosEst);
                 estudianteD.establecerIdentificacionEstudiante(identificacionEst);
@@ -119,11 +110,11 @@ public class EjecutaEstudiante {
         for (int i = 0; i < estudiantes.length; i++) {
             // 1.  
             estudiantes[i].calcularMatricula();
-            
+
             System.out.printf("Datos Estudiante\n"
-                        + "%s\n",                        
-                  estudiantes[i]);
-            
+                    + "%s\n",
+                    estudiantes[i]);
+
         }
     }
 }

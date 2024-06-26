@@ -1,88 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete06;
 
 public abstract class Estudiante {
-    /*
-        1.  Declarar
-        // se declaran datos o atributos con visibilidad protegido,
-        // para que se puedan manipular por las clases derivadas
-        # nombresEstudiante: Cadena
-        # apellidosEstudiante: Cadena
-        # identificacionEstudiante: Cadena
-        # edadEstudiante: Entero
-        # matricula: Real
-        
-    */
-    protected String nombresEstudiante;
-    protected String apellidosEstudiante;
-    protected String identificacionEstudiante;
-    protected int edadEstudiante;
+    protected String nombres;
+    protected String apellidos;
+    protected String identificacion;
+    protected int edad;
     protected double matricula;
-    
-    public Estudiante(String nombre, String apellido){
-        nombresEstudiante = nombre;
-        apellidosEstudiante = apellido;
-    }
-    // Método establecerNombresEstudiante(nom: Cadena)
-    public void establecerNombresEstudiante(String nom){
-        nombresEstudiante = nom;
-    }
-  
-    // Método establecerApellidoEstudiante(ape: Cadena)
-    public void establecerApellidoEstudiante(String ape){
-        apellidosEstudiante = ape;
-    }
-    
-    //  Método establecerIdentificacionEstudiante(iden: Cadena)
-    public void establecerIdentificacionEstudiante(String iden){
-        identificacionEstudiante = iden;
+
+    public void establecerNombresEstudiante(String nombres) {
+        this.nombres = nombres;
     }
 
-    // Método establecerEdadEstudiante(ed: Edad)
-    public void establecerEdadEstudiante(int ed){
-        edadEstudiante = ed;
+    public void establecerApellidoEstudiante(String apellidos) {
+        this.apellidos = apellidos;
     }
-    
-    /*
-    Método abstracto calcularMatricula()
-        // método sin impĺementar, se deja la responsabilidad 
-        // a las clases derivadas
-    */
+
+    public void establecerIdentificacionEstudiante(String identificacion) {
+        this.identificacion = identificacion;
+    }
+
+    public void establecerEdadEstudiante(int edad) {
+        this.edad = edad;
+    }
+
     public abstract void calcularMatricula();
-    
-    //  Métodos obtener para los datos o atributos de la clase
-    //  Método obtenerNombresEstudiante() : Cadena
-    public String obtenerNombresEstudiante(){
-        return nombresEstudiante;  
-    }
- 
-    // Método obtenerApellidoEstudiante() : Cadena
-    public String obtenerApellidoEstudiante(){
-        return apellidosEstudiante; 
-    }
 
-    // Método obtenerIdentificacionEstudiante() : Cadena
-    public String obtenerIdentificacionEstudiante(){
-        return identificacionEstudiante; 
+    @Override
+    public String toString() {
+        return String.format("Nombre: %s\nApellidos: %s\nIdentificación: %s\nEdad: %d\nMatrícula: %.2f\n", 
+                             nombres, apellidos, identificacion, edad, matricula);
     }
-
-    //  Método obtenerEdadEstudiante() : Entero
-    public int obtenerEdadEstudiante(){
-        return edadEstudiante;
-    }
-    
-    /*
-    Método obtenerMatricula() : Real
-        a.  return matricula
-        b.  Fin Método obtenerMatricula
-    */
-    public double obtenerMatricula(){
-        return matricula;
-    }
-
-    
 }
